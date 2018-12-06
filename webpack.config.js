@@ -25,6 +25,10 @@ module.exports = function () {
                     loader: '@ngtools/webpack'
                 },
                 {
+                    test: /\.html$/,
+                    loader: 'html-loader'
+                },
+                {
                     test: /\.scss$/,
                     use: [
                          // "style-loader", // creates style nodes from JS strings

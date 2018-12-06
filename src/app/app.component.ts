@@ -3,10 +3,10 @@ import '../main.scss';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello World!</h1>'
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
-    
+
     constructor() {
         console.log('I am Angular!');
     }
