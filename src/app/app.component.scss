@@ -3,8 +3,28 @@
         background-color: lightgray;
         border-radius: 25px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         margin: 30px;
         padding: 30px;
+    }
+}
+
+.superhero {
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    margin-bottom: 20px;
+    min-width: 30%;
+    padding: 20px;
+
+    &__picture {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__nickname {
+        color: red;
+        font-weight: bolder;
     }
 }
