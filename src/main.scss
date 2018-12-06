@@ -2,12 +2,12 @@ $max-width: 1000px;
 
 body {
     margin: 0 auto;
-    max-width: $max-width;
+    // max-width: $max-width;
     display: flex;
     flex-direction: column;
     height: 100%;
     font-family: 'Source Sans Pro', calibri, Arial, sans-serif !important;
-    min-height: 550px;
+    // min-height: 550px;
  }
  .content {
     flex: 1 0 auto;

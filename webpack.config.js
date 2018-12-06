@@ -21,21 +21,24 @@ module.exports = function () {
         module: {
             rules: [
                 {
+                    test: /\.css$/,
+                    use: [
+                        // "style-loader", // creates style nodes from JS strings
+                        MiniCssExtractPlugin.loader,
+                        "css-loader", // translates CSS into CommonJS
+                    ]
+                },
+                {
                     test: /\.ts$/,
                     loader: '@ngtools/webpack'
                 },
                 {
-                    test: /\.html$/,
-                    loader: 'html-loader'
+                    test: /\.scss$/,
+                    loader: ["raw-loader", "sass-loader?sourceMap"] //"sass-loader" - compiles Sass to CSS, using Node Sass by default
                 },
                 {
-                    test: /\.scss$/,
-                    use: [
-                         // "style-loader", // creates style nodes from JS strings
-                        MiniCssExtractPlugin.loader,
-                        "css-loader", // translates CSS into CommonJS
-                        "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                    ]
+                    test: /\.html$/,
+                    loader: 'html-loader'
                 }
             ]
         },
