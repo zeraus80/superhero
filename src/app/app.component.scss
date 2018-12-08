@@ -15,16 +15,53 @@
     border-radius: 25px;
     display: flex;
     margin-bottom: 20px;
-    min-width: 30%;
+    min-width: 29%;
     padding: 20px;
 
     &__picture {
+        flex-basis: 50%;
+        position: relative;
+    }
+
+    &__img {
         border-radius: 50%;
         overflow: hidden;
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    &__rank {
+        font-size: 28px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 0, 0, .8);
+        top: -11px;
+        right: -7px;
+        color: white;
+        height: 44px;
+        width: 55px;
+        text-align: center;
+        font-weight: bolder;
+        padding: 10px;
+    }
+
+    &__info {
+        flex-basis: 50%;
+        margin-left: 30px;
+        margin-top: 50px;
+
+        p {
+            margin: 10px 0 0 0;
+            font-size: 24px;
+        }
     }
 
     &__nickname {
         color: red;
-        font-weight: bolder;
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
     }
 }
