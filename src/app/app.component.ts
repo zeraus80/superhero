@@ -10,24 +10,7 @@ import * as SuperheroActions from './store/superhero.actions';
 
 @Component({
     selector: 'superheroes-app',
-    template: '<superheroes-list></superheroes-list>'
+    template: '<router-outlet></router-outlet>'
 })
-export class AppComponent implements OnInit {
-
-    superheroesState: Observable<{superheroes: Superhero[]}>;
-
-    constructor(private superheroService: SuperheroService,
-                private store: Store<{superhero: {superheroes: Superhero[]}}>) {
-    }
-
-    ngOnInit() {
-        this.superheroesState = this.store.select('superhero');
-        this.superheroService.getSuperheroes().subscribe((data: any) => {
-            this.store.dispatch(new SuperheroActions.AddSuperheroes(data));
-        });
-    }
-
-    convertToMeters(value) {
-        return ((value * 30.48) / 100).toFixed(2);
-    }
+export class AppComponent {
 }

@@ -1,5 +1,8 @@
 <section class="superheros__section">
-    <div class="superhero" *ngFor="let hero of (superheroesState | async).superheroes; let rank = index">
+    <div class="superhero"
+         *ngFor="let hero of (superheroesState | async).superheroes; let rank = index"
+         (click)="viewSuperhero(hero)"
+    >
         <div class="superhero__picture">
             <div class="superhero__img">
                 <img src="{{hero._picture}}" alt="">
@@ -9,7 +12,7 @@
         <div class="superhero__info">
             <h1 class="superhero__nickname">{{hero._nickname}}</h1>
             <p class="superhero__name">{{hero._name}}</p>
-            <p class="superhero__height">{{convertToMeters(hero._height)}}mt</p>
+            <p class="superhero__height">{{hero._height}}mt</p>
         </div>
     </div>
 </section>
