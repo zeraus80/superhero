@@ -5,22 +5,26 @@ const initialState = {
 };
 
 export function superheroReducer(state = initialState, action: SuperheroActions.SuperheroActions) {
-    
-    switch(action.type) {
+
+    let newState;
+
+    switch (action.type) {
         case SuperheroActions.ADD_SUPERHEROES:
-            console.log('ADD_SUPERHEROES', action.payload);
-            return {
-                ...state,
-                superheroes: [...state.superheroes, action.payload]
+            newState = {
+                superheroes: [...state.superheroes, ...action.payload]
             };
+            break;
         case SuperheroActions.EDIT_SUPERHERO:
-            return {
+            newState = {
                 ...state,
                 superheroes: [...state.superheroes, action.payload]
             };
+            break;
         default:
-            return state;        
+            newState = state;
+            break;
     }
 
-    return state;
+    console.log('newState', newState);
+    return newState;
 }

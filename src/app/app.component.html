@@ -1,5 +1,5 @@
 <section class="superheros__section">
-    <div class="superhero" *ngFor="let hero of superheroes; let rank = index">
+    <div class="superhero" *ngFor="let hero of (superheroesState | async).superheroes; let rank = index">
         <div class="superhero__picture">
             <div class="superhero__img">
                 <img src="{{hero._picture}}" alt="">
