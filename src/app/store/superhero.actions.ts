@@ -1,7 +1,7 @@
 import {Action} from '@ngrx/store';
 import { Superhero } from '../model/superhero.model';
 
-export const EDIT_SUPERHERO = 'EDIT_SUPERHERO';
+export const UPDATE_SUPERHERO = 'UPDATE_SUPERHERO';
 export const ADD_SUPERHEROES = 'ADD_SUPERHEROES';
 
 export class AddSuperheroes implements Action {
@@ -10,10 +10,10 @@ export class AddSuperheroes implements Action {
     constructor(public payload: Superhero[]) {}
 }
 
-export class EditSuperhero implements Action {
+export class UpdateSuperhero implements Action {
 
-    readonly type = EDIT_SUPERHERO;
-    constructor(public payload: Superhero) {}
+    readonly type = UPDATE_SUPERHERO;
+    constructor(public payload: {index: number, superhero: Superhero}) {}
 }
 
-export type SuperheroActions = EditSuperhero | AddSuperheroes;
+export type SuperheroActions = UpdateSuperhero | AddSuperheroes;

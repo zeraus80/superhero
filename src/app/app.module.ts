@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { SuperheroService } from './services/superhero.service';
 import { superheroReducer } from './store/superhero.reducers';
 import { SuperheroesListComponent } from './components/superheroes-list/superheroes-list.component';
@@ -23,12 +22,13 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         HttpClientModule,
+        ReactiveFormsModule,
         StoreModule.forRoot({superhero: superheroReducer}),
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
-        AppComponent, 
-        SuperheroesListComponent, 
+        AppComponent,
+        SuperheroesListComponent,
         SuperheroDetailComponent
     ],
     providers: [SuperheroService]

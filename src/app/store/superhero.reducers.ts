@@ -14,11 +14,16 @@ export function superheroReducer(state = initialState, action: SuperheroActions.
                 superheroes: [...state.superheroes, ...action.payload]
             };
             break;
-        case SuperheroActions.EDIT_SUPERHERO:
-            newState = {
-                ...state,
-                superheroes: [...state.superheroes, action.payload]
+        case SuperheroActions.UPDATE_SUPERHERO:
+            const superhero = state.superheroes[action.payload.index];
+            const updatedSuperhero = {
+                ...superhero,
+                ...action.payload.superhero
             };
+            const superheroes = [...state.superheroes];
+            superheroes[action.payload.index] = updatedSuperhero;
+
+            newState = { superheroes };
             break;
         default:
             newState = state;

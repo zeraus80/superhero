@@ -1,0 +1,13 @@
+.superhero-detail {
+    margin: 100px 0;
+
+    &__picture {
+        img {
+            border-radius: 25px;
+            display: block;
+            margin: 0 auto;
+            width: 15%;
+        }
+    }
+}
+

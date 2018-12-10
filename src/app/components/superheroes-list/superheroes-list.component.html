@@ -1,8 +1,7 @@
-<section class="superheros__section">
+<section class="superheroes__section">
     <div class="superhero"
          *ngFor="let hero of (superheroesState | async).superheroes; let rank = index"
-         (click)="viewSuperhero(hero)"
-    >
+         (click)="viewSuperhero(hero)">
         <div class="superhero__picture">
             <div class="superhero__img">
                 <img src="{{hero._picture}}" alt="">
