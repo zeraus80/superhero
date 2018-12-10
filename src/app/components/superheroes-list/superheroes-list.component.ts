@@ -24,8 +24,12 @@ export class SuperheroesListComponent implements OnInit {
 
     ngOnInit() {
         this.superheroesState = this.store.select('superhero');
-        this.superheroService.getSuperheroes().subscribe((data: any) => {
-            this.store.dispatch(new SuperheroActions.AddSuperheroes(this.adaptData(data)));
+        this.superheroesState.subscribe((data: {superheroes: Superhero[]}) => {
+            if (!data.superheroes.length) {
+                this.superheroService.getSuperheroes().subscribe((data: any) => {
+                    this.store.dispatch(new SuperheroActions.AddSuperheroes(this.adaptData(data)));
+                });
+            }
         });
     }
 
