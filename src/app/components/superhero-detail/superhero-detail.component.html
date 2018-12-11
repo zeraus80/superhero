@@ -4,11 +4,21 @@
     </div>
     <div class="superhero-detail__info">
         <form [formGroup]="form" class="superhero-detail__form">
-            <div class="superhero-detail__text">
-                <label for="nickname">Nickname:</label>
-                <input type="text"  formControlName="nickname">
+            <div formGroupName="superhero">
+                <div class="superhero-detail__text">
+                    <label for="_nickname">Nickname:</label>
+                    <input type="text"  id="_nickname" formControlName="_nickname">
+                </div>
+                <div class="superhero-detail__text">
+                    <label for="_name">Name:</label>
+                    <input type="text"  id="_name" formControlName="_name">
+                </div>
+                <div class="superhero-detail__text">
+                    <label for="_height">Height:</label>
+                    <input type="text" id="_height" formControlName="_height">
+                </div>
             </div>
-            <button type="submit">Save</button>
+            <button class="superhero-detail__button" type="submit" (click)="updateSuperhero()">Update</button>
         </form>
     </div>
 </section>
