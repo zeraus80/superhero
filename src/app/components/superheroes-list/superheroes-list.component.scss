@@ -6,11 +6,12 @@
         font-family: 'Source Sans Pro', calibri, Arial, sans-serif !important;
         height: 100%;
         margin: 0 auto;
+        padding-bottom: 30px;
         padding-top: 180px;
     }
 
     &__section {
-        background-color: lightgray;
+        background-color:rgba(255, 255, 255, 0.6);
         border-radius: 25px;
         display: flex;
         flex-wrap: wrap;
