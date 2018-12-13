@@ -1,17 +1,19 @@
-<section class="superheroes__section">
-    <div class="superhero"
-         *ngFor="let hero of (superheroesState | async).superheroes; let rank = index"
-         (click)="viewSuperhero(hero)">
-        <div class="superhero__picture">
-            <div class="superhero__img">
-                <img src="{{hero._picture}}" alt="">
+<div class="superheroes__container">
+    <section class="superheroes__section">
+        <div class="superhero"
+                *ngFor="let hero of (superheroesState | async).superheroes; let rank = index"
+                (click)="viewSuperhero(hero)">
+            <div class="superhero__picture">
+                <div class="superhero__img">
+                    <img src="{{hero._picture}}" alt="">
+                </div>
+                <div class="superhero__rank">{{rank + 1}}st</div>
             </div>
-            <div class="superhero__rank">{{rank + 1}}st</div>
+            <div class="superhero__info">
+                <h1 class="superhero__nickname">{{hero._nickname}}</h1>
+                <p class="superhero__name">{{hero._name}}</p>
+                <p class="superhero__height">{{hero._height}}mt</p>
+            </div>
         </div>
-        <div class="superhero__info">
-            <h1 class="superhero__nickname">{{hero._nickname}}</h1>
-            <p class="superhero__name">{{hero._name}}</p>
-            <p class="superhero__height">{{hero._height}}mt</p>
-        </div>
-    </div>
-</section>
+    </section>
+</div>

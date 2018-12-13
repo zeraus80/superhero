@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ScriptExtPlugin = require('script-ext-html-webpack-plugin');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -43,9 +43,9 @@ module.exports = function () {
             ]
         },
         plugins: [
-/*             new CopyWebpackPlugin([
+            new CopyWebpackPlugin([
                 { from: 'src/assets', to: 'assets' }
-            ]), */
+            ]),
             new HtmlWebpackPlugin({
                 template: __dirname + '/src/index.html',
                 output: __dirname + '/dist'

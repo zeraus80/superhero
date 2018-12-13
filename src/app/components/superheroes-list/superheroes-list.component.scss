@@ -1,11 +1,21 @@
 .superheroes {
+
+    &__container {
+        background-image: url("../../../assets/img/background.jpg");
+        background-size: cover;
+        font-family: 'Source Sans Pro', calibri, Arial, sans-serif !important;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 180px;
+    }
+
     &__section {
         background-color: lightgray;
         border-radius: 25px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: 30px;
+        margin: 0 80px;
         padding: 30px;
     }
 }
